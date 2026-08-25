@@ -477,7 +477,7 @@ void Bot::setAimDirection () {
          const float distToPredictNodeSq = graph[predictNode].origin.distanceSq (pev->origin);
 
          if (distToPredictNodeSq >= cr::sqrf (2048.0f) ||
-            distToPredictNodeSq <= cr::sqrf (256.0f)) {
+            distToPredictNodeSq <= cr::sqrf (128.0f)) {
             return false;
          }
 
@@ -488,7 +488,7 @@ void Bot::setAimDirection () {
             return false;
          }
          return isNodeValidForPredict (predictNode) && pathLength < cv_max_nodes_for_predict.as <int> ()
-            && numEnemiesNear (graph[predictNode].origin, 1024.0f) > 0;
+            && numEnemiesNear (graph[predictNode].origin, 2048.0f) > 0;
       };
 
       if (changePredictedEnemy) {

@@ -1544,7 +1544,7 @@ void Bot::attackMovement () {
       const auto pistolStrafeDistance = game.is (GameFlags::CSDM) ? kSprayDistanceX2 * 3.0f : kSprayDistanceX2;
 
       // fire hurts friend value here is from previous frame, but acceptable, and saves us alot of cpu cycles
-      if (approach < 30 || m_fireHurtsFriend || ((usesPistol () || usesShotgun ())
+      if (approach >= 30 || m_fireHurtsFriend || ((usesPistol () || usesShotgun ())
          && distanceSq < cr::sqrf (pistolStrafeDistance)
          && isEnemyCone)) {
          m_fightStyle = Fight::Strafe;

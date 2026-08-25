@@ -3988,7 +3988,7 @@ Vector Bot::isBombAudible () {
 }
 
 bool Bot::canRunHeavyWeight () {
-   constexpr auto kInterval = 1.0f / 10.0f;
+   constexpr auto kInterval = 1.0f / 30.0f;
 
    if (m_heavyTimestamp < game.time ()) {
       m_heavyTimestamp = game.time () + kInterval;
